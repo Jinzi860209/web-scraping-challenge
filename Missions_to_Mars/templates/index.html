@@ -27,7 +27,7 @@
         <!-- News Section -->
         <div class="container">
             <h3>Latest Mars News</h3>
-            <h6 style="color: #c1440e">{{ scraped_data.news_title }}</h6>
+            <h6 style="color: #c1440e">{{ scraped_data.news_title}}</h6>
             <p>{{ scraped_data.news_paragraph }}</p>
         </div>
 
@@ -43,7 +43,7 @@
                     <br>
                     <h3>Mars Facts</h3>
                     <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
-                        {{ scraped_data.table}}
+                        {{ scraped_data.html_table|safe}}
                     </div>
                 </div> <!-- col4 -->
             </div><!-- Row -->
@@ -58,7 +58,7 @@
                     {% for item in scraped_data.hemisphere %}
                     <div class="col-md-6">
                         <div class="card text-white bg-dark" style="margin: 30px;">
-                            <img class="card-img-top" src="{{ item.img_url }}" />
+                            <img class="card-img-top" src="{{ item.img_url }}" width="100%" alt="{{image.title}}"> 
                             <div class="card-body">
                                 <p class="card-text">{{ item.title }}</p>
                             </div>

@@ -30,7 +30,7 @@ def scrape():
     scraped_data = scrape_mars.scrape()
 
 
-    mongo.db.collection.update({}, scraped_data, upsert=True)
+    mongo.db.scraped_data.update({}, scraped_data, upsert=True)
 
     return redirect("/", code=302)
 
