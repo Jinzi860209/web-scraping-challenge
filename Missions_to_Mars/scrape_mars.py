@@ -103,4 +103,4 @@ def scrape():
   
     # Close the browser after scraping
     browser.quit()         
-    return scraped_data  
+    return scraped_data 
